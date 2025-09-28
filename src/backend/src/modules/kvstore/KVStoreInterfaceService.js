@@ -47,6 +47,7 @@ const BaseService = require('../../services/BaseService');
  *
  * @typedef {Object} KVStoreIncrDecrParams
  * @property {string} key - The key to increment or decrement.
+ * @property {string} path period-joined path to key location (ie. "path.to.attribute"' }
  * @property {number} [amount] - Optional amount to increment or decrement by.
  *
  * @typedef {Object} KVStoreExpireAtParams
@@ -117,6 +118,7 @@ class KVStoreInterfaceService extends BaseService {
                     description: 'Increment a value by key.',
                     parameters: {
                         key: { type: 'string', required: true },
+                        path: { type: 'string', description: 'period-joined path to key location (ie. "path.to.attribute"' },
                         amount: { type: 'number' },
 
                     },
@@ -126,6 +128,7 @@ class KVStoreInterfaceService extends BaseService {
                     description: 'Decrement a value by key.',
                     parameters: {
                         key: { type: 'string', required: true },
+                        path: { type: 'string', description: 'period-joined path to key location (ie. "path.to.attribute"' },
                         amount: { type: 'number' },
 
                     },

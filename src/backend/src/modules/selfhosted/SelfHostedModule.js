@@ -38,7 +38,7 @@ class SelfHostedModule extends AdvancedBase {
         const DevCreditService = require("./DevCreditService");
         services.registerService('dev-credit', DevCreditService);
         
-        const { DBKVService } = require("../../services/DBKVService");
+        const { DBKVService } = require("../../services/KVService/index.mjs");
         services.registerService('puter-kvstore', DBKVService);
         
         const MinLogService = require('./MinLogService');
